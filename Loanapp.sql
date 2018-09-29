@@ -1,0 +1,26 @@
+CREATE DATABASE LoanApp;
+GO
+USE LoanApp;
+
+CREATE TABLE Customers(
+Id int not null primary key identity(1,1),
+Name varchar(15) not null,
+Passport varchar(12) not null)
+
+CREATE TABLE Loans(
+Id int not null primary key identity(1,1),
+LoanDate smalldatetime not null,
+Amount money not null,
+CustomerId int not null foreign key references Customers(id))
+
+Go
+CREATE VIEW Allview
+AS
+SELECT C.Id, C.Name, C.Passport, L.LoanDate, L.Amount FROM Customers AS C INNER JOIN Loans AS L
+ON C.Id = L.CustomerId;
+
+
+
+
+
+
