@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище LoanAppModel1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "LoanApp.dbo.Allview" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Allview">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Passport" />
+      <PropertyRef Name="LoanDate" />
+      <PropertyRef Name="Amount" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Passport" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="LoanDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище LoanAppModel1Container">
+    <EntitySet Name="Allview" EntityType="Self.Allview" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Allview].[Id] AS [Id], 
+    [Allview].[Name] AS [Name], 
+    [Allview].[Passport] AS [Passport], 
+    [Allview].[LoanDate] AS [LoanDate], 
+    [Allview].[Amount] AS [Amount]
+    FROM [dbo].[Allview] AS [Allview]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

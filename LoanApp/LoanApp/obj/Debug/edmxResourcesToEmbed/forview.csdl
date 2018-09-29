@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoanAppModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Allview">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Passport" />
+      <PropertyRef Name="LoanDate" />
+      <PropertyRef Name="Amount" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Passport" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoanDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="LoanAppEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Allviews" EntityType="Self.Allview" />
+  </EntityContainer>
+</Schema>
